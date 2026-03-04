@@ -1,0 +1,7 @@
+{
+  "malware_signatures": [
+    "malicious_string_1",
+    "trojan_payload_xyz",
+    "virus_signature_abc"
+  ]
+}

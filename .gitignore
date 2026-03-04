@@ -1,0 +1,8 @@
+backend/backend/data/quarantine/
+backend/backend/uploads/
+backend/backend/logs/
+__pycache__/
+venv/
+.env
+*.exe
+*.msi
