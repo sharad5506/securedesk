@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scan File - SecureDesk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>SecureDesk</h2>
+    <a href="index.html">Dashboard</a>
+    <a class="active" href="scan.html">Scan File</a>
+    <a href="quarantine.html">Quarantine</a>
+    <a href="logs.html">Threat Logs</a>
+</div>
+
+<div class="main-container">
+    <div class="card">
+        <h2 class="card-title">Scan a File</h2>
+
+        <!-- File Selection -->
+        <div class="file-box" onclick="document.getElementById('fileInput').click()">
+            <span class="choose-btn">Choose File</span>
+            <span id="fileName">No file chosen</span>
+            <input type="file" id="fileInput" hidden>
+        </div>
+
+        <button class="scan-btn" onclick="scanFile()">Scan File</button>
+
+        <pre id="scanOutput"></pre>
+    </div>
+</div>
+
+<script>
+    // Update filename when user selects a file
+    const fileInput = document.getElementById("fileInput");
+    const fileName = document.getElementById("fileName");
+
+    fileInput.addEventListener("change", () => {
+        fileName.textContent =
+            fileInput.files.length > 0 ? fileInput.files[0].name : "No file chosen";
+    });
+</script>
+
+<script src="main.js"></script>
+
+</body>
+</html>

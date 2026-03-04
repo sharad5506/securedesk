@@ -1,0 +1,252 @@
+/* ============================================================
+   SECUREDESK CYBER UI – FINAL PRODUCTION VERSION
+   ============================================================ */
+
+:root {
+    --bg-main: #050505;
+    --bg-card: #0a0a0a;
+    --sidebar-bg: rgba(10, 10, 10, 0.95);
+    --primary: #00ff9d;
+    --primary-soft: rgba(0, 255, 157, 0.15);
+    --danger: #ff3b3b;
+    --warning: #ffaa00;
+    --safe: #00ff88;
+    --text-main: #00ffbf;
+}
+
+/* ================= BODY ================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-main);
+    font-family: "Segoe UI", sans-serif;
+    color: var(--text-main);
+    overflow-x: hidden;
+    transition: 0.3s ease;
+}
+
+/* ================= DARK MODE TOGGLE ================= */
+
+body.light-mode {
+    --bg-main: #f5f5f5;
+    --bg-card: #ffffff;
+    --sidebar-bg: #ffffff;
+    --primary: #008060;
+    --text-main: #222;
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background: var(--sidebar-bg);
+    border-right: 2px solid var(--primary-soft);
+    box-shadow: 0 0 20px rgba(0, 255, 120, 0.2);
+    padding-top: 25px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 14px 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: var(--text-main);
+    border-left: 3px solid transparent;
+    transition: 0.25s;
+}
+
+.sidebar a:hover {
+    background: var(--primary-soft);
+    border-left: 3px solid var(--primary);
+    transform: translateX(6px);
+}
+
+.sidebar a.active {
+    background: var(--primary-soft);
+    border-left: 3px solid var(--primary);
+}
+
+/* Sidebar Buttons */
+.sidebar button {
+    width: 85%;
+    margin: 10px auto;
+    display: block;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--text-main);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar button:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+/* ================= MAIN ================= */
+
+.main {
+    margin-left: 240px;
+    padding: 40px;
+}
+
+h1 {
+    margin-bottom: 25px;
+}
+
+/* ================= DASHBOARD GRID ================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* ================= CARDS ================= */
+
+.card {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--primary-soft);
+    box-shadow: 0 0 20px rgba(0, 255, 120, 0.15);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0, 255, 120, 0.3);
+}
+
+/* Status Colors */
+.status-safe {
+    border-left: 5px solid var(--safe);
+}
+.status-danger {
+    border-left: 5px solid var(--danger);
+}
+.status-warning {
+    border-left: 5px solid var(--warning);
+}
+
+/* ================= LOADING ANIMATION ================= */
+
+.loading {
+    display: inline-block;
+    position: relative;
+}
+
+.loading::after {
+    content: "Scanning";
+    animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+    0% { content: "Scanning."; }
+    33% { content: "Scanning.."; }
+    66% { content: "Scanning..."; }
+}
+
+/* ================= FILE SCAN UI ================= */
+
+.file-box {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.choose-btn {
+    padding: 8px 14px;
+    border: 1px solid var(--primary);
+    background: transparent;
+    color: var(--text-main);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.choose-btn:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+#fileName {
+    margin-left: 12px;
+}
+
+/* Scan Button */
+.scan-btn {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--primary);
+    background: transparent;
+    color: var(--text-main);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.scan-btn:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+/* ================= LOG VIEW ================= */
+
+.log-box {
+    background: rgba(0, 255, 150, 0.05);
+    border-left: 4px solid var(--primary);
+    padding: 15px;
+    white-space: pre-wrap;
+    font-family: Consolas, monospace;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* ================= PROCESS MONITOR ================= */
+
+.process-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 255, 150, 0.1);
+}
+
+.cpu-high {
+    color: var(--danger);
+}
+.cpu-medium {
+    color: var(--warning);
+}
+.cpu-low {
+    color: var(--safe);
+}

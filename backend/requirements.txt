@@ -1,0 +1,6 @@
+pip install flask
+pip install psutil
+pip install requests
+pip install schedule
+pip install psutil requests schedule
+pip install flask-cors

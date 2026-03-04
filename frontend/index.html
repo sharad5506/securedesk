@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SecureDesk Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>🛡 SecureDesk</h2>
+
+    <a href="index.html" class="active">Dashboard</a>
+    <a href="scan.html">Scan File</a>
+    <a href="quarantine.html">Quarantine</a>
+    <a href="logs.html">Threat Logs</a>
+
+    <hr>
+
+    <button id="darkToggle">🌙 Toggle Dark Mode</button>
+    <button id="updateBtn">🔄 Check Updates</button>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+
+    <h1>System Overview</h1>
+
+    <div class="dashboard-grid">
+
+        <!-- Engine Status Card -->
+        <div class="card status-card" id="engineStatus">
+            <h3>⚙ Engine Status</h3>
+            <p class="loading">Loading...</p>
+        </div>
+
+        <!-- Quarantine Count -->
+        <div class="card info-card" id="quarantineCount">
+            <h3>🗂 Quarantined Files</h3>
+            <p>Loading...</p>
+        </div>
+
+        <!-- Protection Status -->
+        <div class="card protection-card" id="protectionStatus">
+            <h3>🛡 Protection</h3>
+            <p>Real-Time Monitoring Active</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<div class="topbar">System Dashboard</div>
+
+<div class="main">
+    <div class="dashboard-grid">
+
+        <!-- SYSTEM STATUS -->
+        <div class="status-card">
+            <h3 class="card-title glow">Engine Status</h3>
+            <p id="engineStatus">Loading...</p>
+            <span id="statusBadge" class="status-badge badge-safe">SAFE</span>
+
+            <div class="threat-bar">
+                <div class="threat-fill" id="threatFill" style="--level: 30%;"></div>
+            </div>
+        </div>
+
+        <!-- RADAR -->
+        <div class="status-card">
+            <h3 class="card-title glow">Real-Time Threat Radar</h3>
+            <div class="radar">
+                <div class="radar-line"></div>
+
+                <!-- blinking points -->
+                <div class="radar-dot" style="top:20%; left:60%;"></div>
+                <div class="radar-dot" style="top:55%; left:30%; animation-delay:0.7s;"></div>
+                <div class="radar-dot" style="top:40%; left:75%; animation-delay:1.2s;"></div>
+            </div>
+        </div>
+
+        <!-- ACTIVITY -->
+        <div class="status-card">
+            <h3 class="card-title glow">Activity Summary</h3>
+            <p><b>Files Scanned:</b> <span id="filesScanned">0</span></p>
+            <p><b>Threats Found:</b> <span id="threatsFound">0</span></p>
+            <p><b>Quarantined:</b> <span id="quarantineCount">0</span></p>
+        </div>
+
+    </div>
+</div>
